@@ -1,0 +1,32 @@
+version: '3'
+services:
+  frontend:
+    build:
+     context: ./frontend
+     dockerfile: Dockerfile
+    depends_on:
+      - backend
+  backend:
+    build:
+     context: ./backend
+     dockerfile: Dockerfile
+    ports:
+      - "3333:3333"
+  proxy:
+    image: nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - frontend
+  # squid-proxy:
+  #   build:
+  #     context: ./squid-proxy
+  #   ports:
+  #     - 3128:3128
+  #   volumes:
+  #     - ./squid-proxy/squid.conf:/etc/squid/squid.conf
+  #   depends_on:
+  #     - frontend
+  #     - backend
