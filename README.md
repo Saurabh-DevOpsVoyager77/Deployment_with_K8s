@@ -30,11 +30,15 @@ Follow these steps to get started with the Deployment of React NodeJs Applicatio
 
 **Run the following commands:**
 
-kubectl apply -f frontend-deployment.yaml
-kubectl apply -f frontend-service.yaml
-kubectl apply -f backend-deployment.yaml
-kubectl apply -f backend-service.yaml
-kubectl apply -f backend-pvc.yaml
+``kubectl apply -f frontend-deployment.yaml``
+
+``kubectl apply -f frontend-service.yaml``
+
+``kubectl apply -f backend-deployment.yaml``
+
+``kubectl apply -f backend-service.yaml``
+
+``kubectl apply -f backend-pvc.yaml``
 
 **NOTE:**
 In this project I have already uploaded my Docker Image over the Docker Hub. To see this How you can do that please read this article:
